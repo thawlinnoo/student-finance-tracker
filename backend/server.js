@@ -11,13 +11,15 @@ try {
   process.exit(1);
 }
 
-const server = app.listen(PORT);
+const server = app.listen(PORT); //start the server with the port number from .env 
 
-server.once('listening', () => {
+server.once('listening', () => { //once --> run only once, startup message
   console.log(`Server running on http://localhost:${PORT}`);
 });
 
-server.on('error', (error) => {
+server.on('error', (error) => { // on --> every time events are emitted
   console.error('Failed to start server:', error.message);
   process.exit(1);
 });
+
+//server.js is to start the server
